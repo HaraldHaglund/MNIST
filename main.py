@@ -3,10 +3,7 @@ import cv2
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import pandas as pd
-import seaborn as sns
-from tensorflow.keras import datasets, layers, models
 from tensorflow.keras.callbacks import EarlyStopping
-from sklearn.metrics import confusion_matrix
 
 ### Step 0: Get the data.
 mnist = tf.keras.datasets.mnist
@@ -80,7 +77,7 @@ callbacks = [
     )
 ]
 #We run the model through 10 epochs and choose the model with the minimum loss
-history = model.fit(x_train,y_train, epochs=10,validation_data=(x_test,y_test),callbacks=callbacks)
+history = model.fit(x_train,y_train, epochs=15,validation_data=(x_test,y_test),callbacks=callbacks)
 # Create images of the loss and accuracy plots
 metrics_df = pd.DataFrame(history.history)
 loss_plot = metrics_df[["loss", "val_loss"]].plot()
