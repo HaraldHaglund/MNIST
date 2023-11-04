@@ -6,9 +6,9 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix, accuracy_score
 
 ###Step 7: Present solution
-x_test = np.load('x_test.npy')
-y_test = np.load('y_test.npy')
-unique_labels = np.load('unique_labels.npy')
+x_test = np.load('cp/checkpoint/x_test.npy')
+y_test = np.load('cp/checkpoint/y_test.npy')
+unique_labels = np.load('cp/checkpoint/unique_labels.npy')
 model = tf.keras.models.load_model('best_handwritten.model')
 #Test the final model
 y_pred = model.predict(x_test)

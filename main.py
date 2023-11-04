@@ -72,7 +72,7 @@ model.compile(
 callbacks = [
         EarlyStopping(patience=2),
         tf.keras.callbacks.ModelCheckpoint(
-        filepath='venv/cp/checkpoint',
+        filepath='cp/checkpoint',
         save_weights_only=False,
         monitor='loss',
         mode='min',
@@ -90,10 +90,10 @@ accuracy_plot = metrics_df[["accuracy", "val_accuracy"]].plot()
 plt.savefig("accuracy_plot.png")
 plt.close()
 #Save the best model (and some other parameters)
-best_model = tf.keras.models.load_model('venv/cp/checkpoint')
+best_model = tf.keras.models.load_model('cp/checkpoint')
 best_model.save('best_handwritten.model')
-np.save('x_test.npy', x_test)
-np.save('y_test.npy', y_test)
-np.save('x_test.npy', x_test)
-np.save('unique_labels.npy', unique_labels)
+np.save('cp/checkpoint/x_test.npy', x_test)
+np.save('cp/checkpoint/y_test.npy', y_test)
+np.save('cp/checkpoint/x_test.npy', x_test)
+np.save('cp/checkpoint/unique_labels.npy', unique_labels)
 #See testmodel.py next
