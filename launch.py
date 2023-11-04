@@ -28,5 +28,5 @@ while os.path.isfile(os.path.join(project_dir, f"digits/digit{image_number}.png"
 
     finally:
         image_number += 1
-#The model got 8/10 correct on my digits imported from paint
+#The model got correct 18/20 correct on my digits imported from paint.
 #In order to try it for yourself, draw a number on an image of resolution 28x28 and save it as a png file inside the "digits" folder
